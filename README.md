@@ -17,6 +17,13 @@ or simply using default arguments
 python demo.py
 ```
 
+__Running the Tests__:
+
+Run the tests to test functions in `utils.py`.
+```
+python3 -m pytest
+```
+
 ## Fuctions
 
 There are two main functions in the `utils.py`:
