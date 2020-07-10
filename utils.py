@@ -41,6 +41,8 @@ def find_match(filepath, supplier_name, batch_size=config.BATCH_SIZE):
     supplier_id = ""
     
     with open(filepath, 'r') as f:
+        # skip header line
+        next(f)
         while True:
             next_n_lines = list(islice(f,batch_size))
             if not next_n_lines:
