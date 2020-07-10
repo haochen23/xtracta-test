@@ -1,5 +1,9 @@
 # Test Demo for Extracting and Matching Supplier Name in OCR Extracted TXT files
 
+## Demo Notebook
+
+You can refer to this [demo notebook](https://colab.research.google.com/drive/10ckSJRa4o5f8ma_h4aF2Q1TCp28r9L4V?usp=sharing) on how to use the code.
+
 ## Usage:
 
 __Run the Demo__:
