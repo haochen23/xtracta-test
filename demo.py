@@ -6,7 +6,6 @@
     Usage: python demo.py --invoice ./inputs/invoice.txt, --suppliernames ./inputs/suppliernames.txt
 '''
 
-import config
 import utils
 import argparse
 
@@ -22,9 +21,11 @@ ap.add_argument("-s", "--suppliernames", type=str,
 args = vars(ap.parse_args())
 
 if __name__ == "__main__":
-    supplier_name = utils.extract_sup_name(args["invoice"])
+    invoice_path = "./inputs/invoice.txt"
+    supplier_path = "./inputs/suppliernames.txt"
+    invoice_words = utils.read_process_invoice(invoice_path)
+    supplier_name = utils.find_match(invoice_words, supplier_path, batch_size=1000)
     assert supplier_name == "Demo Company"
-    print("Extracted Supplier Name is {}".format(supplier_name))
-    supplier_id = utils.find_match(args["suppliernames"], supplier_name, 
-                                   config.BATCH_SIZE)
-    assert supplier_id == "3153303"
+    print("Matched Supplier Name is {}".format(supplier_name))
+    
+    
