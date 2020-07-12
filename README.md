@@ -6,21 +6,31 @@ You can refer to this [demo notebook](https://colab.research.google.com/drive/10
 
 ## Usage:
 
-__Run the Demo__:
+__Run the Demo__ in command line:
 
-```
+```python
+# windows
 python demo.py --invoice ./inputs/invoice.txt, --suppliernames ./inputs/suppliernames.txt
+
+# Or linux
+python3 demo.py --invoice ./inputs/invoice.txt, --suppliernames ./inputs/suppliernames.txt
 ```
 or simply using default arguments
 
-```
+```python
+#windows
 python demo.py
+#Or linux
+python3 demo.py
 ```
 
 __Running the Tests__:
 
 Run the tests to test functions in `utils.py`.
-```
+```python
+#windows
+python -m pytest
+# Or linux
 python3 -m pytest
 ```
 
