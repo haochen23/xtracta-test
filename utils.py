@@ -1,3 +1,14 @@
+'''
+    util functions
+        read_read_process_invoice(invoice_txt): 
+            read and process invoice.txt file, return a list object 
+            contains words from the same line in the invoice
+    
+        find_match(invoice_words, supplier_txt, batch_size = 1000):
+            find a match (if found) of supplier name from suppliernames.txt 
+            in the invoice.txt file
+'''
+
 import ast
 from itertools import islice
 import pandas as pd

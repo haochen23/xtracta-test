@@ -1,7 +1,7 @@
 
 '''
-    demo for extract supplier name from ./inputs/invoice.txt, and
-    find matched supplier name from ./inputs/suppliernames.txt
+    demo for finding matched supplier name from ./inputs/suppliernames.txt
+    in the ./inputs/invoice.txt
     
     Usage: python demo.py --invoice ./inputs/invoice.txt, --suppliernames ./inputs/suppliernames.txt
 '''
