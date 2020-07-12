@@ -35,7 +35,7 @@ python3 demo.py
 
 There are two main functions in the `utils.py`:
 - `read_process_invoice(invoice_txt)` Read and process invoice.txt and return a list object contains words in the same line in the invoice
-- `find_match(invoice_words, supplier_txt, batch_size = 1000)` Finds loop through the supplier names in suppliernames.txt and return a match (if found)in the invoice. We set a batch_size=1000 to process 1000 line at a time. It is useful in reading large size files.
+- `find_match(invoice_words, supplier_txt, batch_size = 1000)` Loops through the supplier names in suppliernames.txt and return a match (if found)in the invoice. We set a batch_size=1000 to process 1000 line at a time. It is useful in reading large size files.
 
 __Assumptions__:
 1. I assume invoice.txt is small that can be read directly, so I did not add a batch_size for `read_process_invoice` function.
