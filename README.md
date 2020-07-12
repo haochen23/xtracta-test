@@ -6,6 +6,12 @@ You can refer to this [demo notebook](https://colab.research.google.com/drive/10
 
 ## Usage:
 
+First clone and cd to the repo
+```
+git clone https://github.com/haochen23/xtracta-test.git
+cd xtracta-test
+```
+
 __Run the Demo__ in command line:
 
 ```python
@@ -20,6 +26,7 @@ or simply using default arguments
 ```python
 #windows
 python demo.py
+
 #Or linux
 python3 demo.py
 ```
@@ -30,6 +37,7 @@ Run the tests to test functions in `utils.py`.
 ```python
 #windows
 python -m pytest
+
 # Or linux
 python3 -m pytest
 ```
