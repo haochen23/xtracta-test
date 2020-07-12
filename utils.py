@@ -30,11 +30,13 @@ def read_process_invoice(invoice_txt):
                 invoice.append(line)
             except:
                 pass
+    # only keep "word", "pos_id", "line_id", "page_id" fields in word_list
     for item in invoice:
         word_list.append([item["word"], item["pos_id"], item["line_id"], item["page_id"]])
         
     invoice_df = pd.DataFrame(word_list, 
                               columns=["word", "pos_id", "line_id", "page_id"])
+    # save all line_ids to find words in the same line
     invoice_line_ids = sorted(list(set(invoice_df["line_id"].values)))
     
     sameline_word_df = []
@@ -43,7 +45,7 @@ def read_process_invoice(invoice_txt):
             # suppose supplier name appears on invoice page_id == 1
             invoice_df[(invoice_df["line_id"]==i).values & (invoice_df["page_id"]==1).values]
             )
-        
+    # words in the same line, a list of strings
     sameline_words = []
     for i in range(len(sameline_word_df)):
         sameline_word_df[i] = sameline_word_df[i].sort_values(by=["pos_id"])
@@ -68,9 +70,10 @@ def find_match(invoice_words, supplier_txt, batch_size = 1000):
             next_n_lines = list(islice(f,batch_size))
             if not next_n_lines:
                 break
+            # read batch_size=1000 lines at a time
             for line in next_n_lines:
                 supplier = line.strip().split(',')[1]       
-    
+                # find matched supplier
                 for words in invoice_words:
                     if str(supplier) in words:
                         return supplier

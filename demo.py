@@ -21,11 +21,22 @@ ap.add_argument("-s", "--suppliernames", type=str,
 args = vars(ap.parse_args())
 
 if __name__ == "__main__":
+    # path to invoice.txt
     invoice_path = "./inputs/invoice.txt"
+    
+    # path to suppliernames.txt
     supplier_path = "./inputs/suppliernames.txt"
+    
+    # read and process invoice
     invoice_words = utils.read_process_invoice(invoice_path)
+    
+    # find matched supplier name in the invoice
     supplier_name = utils.find_match(invoice_words, supplier_path, batch_size=1000)
+    
     assert supplier_name == "Demo Company"
-    print("Matched Supplier Name is {}".format(supplier_name))
+    if supplier_name:
+        print("Matched Supplier Name is {}.".format(supplier_name))
+    else:
+        print("Match not found.")
     
     
